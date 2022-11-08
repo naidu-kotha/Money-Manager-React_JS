@@ -1,0 +1,60 @@
+/* Write your CSS here */
+.moneyCard1 {
+  border-style: solid;
+  border-color: #84cc16;
+  border-radius: 10px;
+  background-color: #ecfccb;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+}
+.moneyCard2 {
+  border-style: solid;
+  border-color: #06b6d4;
+  border-radius: 10px;
+  background-color: #cffafe;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px;
+}
+.moneyCard3 {
+  border-style: solid;
+  border-color: #7c3aed;
+  border-radius: 10px;
+  background-color: #ede9fe;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px;
+}
+.moneyDetailsHeadings {
+  font-size: 24px;
+  font-family: 'roboto';
+  color: #1e293b;
+  margin: 0px;
+}
+.moneyDetailsAmounts {
+  font-size: 32px;
+  font-family: 'roboto';
+  color: #1e293b;
+  font-weight: bold;
+  margin: 0px;
+}
+.mc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+}
+.img {
+  height: 100px;
+  width: 100px;
+}

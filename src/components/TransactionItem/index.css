@@ -1,0 +1,31 @@
+/* Write your CSS here */
+.lis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.liss {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 600px;
+}
+.addListItems {
+  font-size: 16px;
+  align-items: center;
+  font-family: 'roboto';
+  margin: 10px;
+}
+.b {
+  border-width: 0px;
+  background-color: transparent;
+  margin-top: 18px;
+  margin-left: 15px;
+}
+.imgge {
+  height: 16px;
+  width: 16px;
+}
+.hr {
+  width: 90%;
+}

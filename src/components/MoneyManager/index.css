@@ -1,0 +1,111 @@
+/* Write your CSS here */
+.bg {
+  height: 150vh;
+  padding: 40px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcomeContainer {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  height: 30vh;
+  width: 100%;
+  background-size: cover;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.main_heading {
+  color: #475569;
+  font-family: 'roboto';
+  font-size: 30px;
+  font-weight: bold;
+}
+.para {
+  color: #7e858e;
+  font-family: 'roboto';
+  font-size: 30px;
+  font-weight: bold;
+}
+.highlighting {
+  color: #0b69ff;
+  font-family: 'roboto';
+  font-size: 30px;
+  font-weight: bold;
+}
+.moneyDetailsContainer {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.transactionSessions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.transactionForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  padding: 30px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 15px;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.inputBox {
+  height: 36px;
+  width: 100%;
+  border-radius: 10px;
+}
+.button {
+  height: 32px;
+  width: 70px;
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 0px;
+  font-family: 'roboto';
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #0b69ff;
+  margin-top: 20px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+}
+.h {
+  width: 90%;
+  margin: 10px;
+}
+.listItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 0px;
+  margin-right: 50px;
+}
+.listHeadings {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'roboto';
+  margin: 10px;
+}
