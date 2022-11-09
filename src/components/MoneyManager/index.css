@@ -1,0 +1,127 @@
+.bg {
+  background-color: #ffffff;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.greeting-card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  background-size: cover;
+  width: 90%;
+  padding: 30px;
+}
+
+.person-name {
+  font-family: 'Roboto';
+  font-size: 28px;
+  color: #475569;
+  text-align: center;
+  font-weight: 500;
+}
+
+.welcome-msg {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #475569;
+  text-align: center;
+}
+
+.app-name {
+  color: #0b69ff;
+  font-weight: 500;
+}
+
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+
+.transactions-input {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.inputs-box {
+  border: 1px solid #cbd5e1;
+  width: 100%;
+  height: 40px;
+}
+
+.add-button {
+  background-color: #0b69ff;
+  color: #ffffff;
+  height: 36px;
+  width: 60px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-left: 8px;
+}
+
+.list-items-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cbd5e1;
+  width: 100%;
+}
+
+.list-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+}
+
+@media screen and (min-width: 768px) {
+  .bg {
+    padding: 80px;
+  }
+
+  .greeting-card {
+    padding: 50px;
+    padding-bottom: 20px;
+  }
+
+  .person-name {
+    text-align: left;
+    font-size: 40px;
+  }
+
+  .welcome-msg {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .transactions-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .transactions-input {
+    width: 40%;
+  }
+
+  .transactions-container-list {
+    width: 50%;
+  }
+}

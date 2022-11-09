@@ -1,0 +1,16 @@
+/* Write your CSS here */
+.transaction-items-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+}
+.dlt-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.dlt-img {
+  height: 15px;
+  width: 15px;
+}
