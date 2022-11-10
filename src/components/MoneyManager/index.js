@@ -223,6 +223,7 @@ class MoneyManager extends Component {
                 <p>Amount</p>
                 <p>Type</p>
               </li>
+              {/* <hr className="hr-line" /> */}
               {transactionList.map(eachTransaction => (
                 <TransactionItem
                   key={eachTransaction.id}

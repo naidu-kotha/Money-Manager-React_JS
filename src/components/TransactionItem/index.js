@@ -11,23 +11,26 @@ const TransactionItem = props => {
   }
   //   const text = option === 'INCOME' ? 'Income' : 'Expenses'
   return (
-    <li className="transaction-items-list">
-      <p className="">{title}</p>
-      <p className="">{amount}</p>
-      <p className="">{displayText}</p>
-      <button
-        className="dlt-btn"
-        type="button"
-        testid="delete"
-        onClick={onClickDeleteBtn}
-      >
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
-          alt="delete"
-          className="dlt-img"
-        />
-      </button>
-    </li>
+    <>
+      <hr className="hr-line" />
+      <li className="transaction-items-list">
+        <p className="">{title}</p>
+        <p className="">{amount}</p>
+        <p className="">{displayText}</p>
+        <button
+          className="dlt-btn"
+          type="button"
+          testid="delete"
+          onClick={onClickDeleteBtn}
+        >
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
+            alt="delete"
+            className="dlt-img"
+          />
+        </button>
+      </li>
+    </>
   )
 }
 
