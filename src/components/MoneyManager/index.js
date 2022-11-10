@@ -21,9 +21,70 @@ class MoneyManager extends Component {
     amount: '',
     option: transactionTypeOptions[0].optionId,
     transactionList: [],
-    balance: 0,
-    income: 0,
-    expenses: 0,
+  }
+
+  deleteTransaction = id => {
+    const {transactionList} = this.state
+    // const {amount} = transactionList//
+    // console.log(amount)
+    const filteredTransactions = transactionList.filter(each => each.id !== id)
+    this.setState({transactionList: filteredTransactions})
+    // if (option === 'INCOME') {
+    //   //   const {income, balance} = this.state
+    //   //   this.setState({income: income - parseInt(amount)})
+    //   //   this.setState({balance: balance - parseInt(amount)})
+
+    //   this.setState(prevState => ({
+    //     income: prevState.income - parseInt(amount),
+    //     balance: prevState.balance - parseInt(amount),
+    //   }))
+    // } else {
+    //   //   const {expenses, balance} = this.state
+    //   //   this.setState({expenses: expenses - parseInt(amount)})
+    //   //   this.setState({balance: balance + parseInt(amount)})
+    //   this.setState(prevState => ({
+    //     expenses: prevState.expenses - parseInt(amount),
+    //     balance: prevState.balance + parseInt(amount),
+    //   }))
+    // }
+  }
+
+  onClickButton = event => {
+    event.preventDefault()
+    const {title, amount, option} = this.state
+
+    if (title === '' || amount === '') {
+      alert('Enter Valid Details')
+    } else {
+      const typeOption = transactionTypeOptions.find(
+        eachTransaction => eachTransaction.optionId === option,
+      )
+      const {displayText} = typeOption
+      const newItem = {
+        id: v4(),
+        title,
+        amount: parseInt(amount),
+        option,
+        displayText,
+      }
+      //   if (option === 'INCOME') {
+      //     this.setState(prevState => ({
+      //       income: prevState.income + parseInt(amount),
+      //       balance: prevState.balance + parseInt(amount),
+      //     }))
+      //   } else {
+      //     this.setState(prevState => ({
+      //       expenses: prevState.expenses + parseInt(amount),
+      //       balance: prevState.balance - parseInt(amount),
+      //     }))
+      //   }
+      this.setState(prevState => ({
+        transactionList: [...prevState.transactionList, newItem],
+        title: '',
+        amount: '',
+        option: prevState.option,
+      }))
+    }
   }
 
   onChangeTitle = event => {
@@ -38,74 +99,56 @@ class MoneyManager extends Component {
     this.setState({option: event.target.value})
   }
 
-  onClickButton = event => {
-    event.preventDefault()
-    const {title, amount, option} = this.state
+  getExpenses = () => {
+    const {transactionList} = this.state
+    let expensesAmount = 0
 
-    if (title === '' || amount === '') {
-      alert('Enter Valid Details')
-    } else {
-      const newItem = {
-        id: v4(),
-        title,
-        amount,
-        option,
+    transactionList.forEach(eachTransaction => {
+      if (eachTransaction.option === transactionTypeOptions[1].optionId) {
+        expensesAmount += eachTransaction.amount
       }
-      if (option === 'INCOME') {
-        this.setState(prevState => ({
-          income: prevState.income + parseInt(amount),
-          balance: prevState.balance + parseInt(amount),
-        }))
-      } else {
-        this.setState(prevState => ({
-          expenses: prevState.expenses + parseInt(amount),
-          balance: prevState.balance - parseInt(amount),
-        }))
-      }
-      this.setState(prevState => ({
-        transactionList: [...prevState.transactionList, newItem],
-        title: '',
-        amount: '',
-        option: prevState.option,
-      }))
-    }
+    })
+
+    return expensesAmount
   }
 
-  deleteTransaction = id => {
+  getIncome = () => {
     const {transactionList} = this.state
-    const {amount} = transactionList // error
-    console.log(amount)
-    const filteredTransactions = transactionList.filter(each => each.id !== id)
-    this.setState({transactionList: filteredTransactions})
-    // if (option === 'INCOME') {
-    //   //   const {income, balance} = this.state
-    //   //   this.setState({income: income - amount})
-    //   //   this.setState({balance: balance - amount})
+    let incomeAmount = 0
+    transactionList.forEach(eachTransaction => {
+      if (eachTransaction.option === transactionTypeOptions[0].optionId) {
+        incomeAmount += eachTransaction.amount
+      }
+    })
 
-    //   this.setState(prevState => ({
-    //     income: prevState.income - parseInt(amount),
-    //     balance: prevState.balance - parseInt(amount),
-    //   }))
-    // } else {
-    //   //   const {expenses, balance} = this.state
-    //   //   this.setState({expenses: expenses - amount})
-    //   //   this.setState({balance: balance - amount})
-    //   this.setState(prevState => ({
-    //     expenses: prevState.expenses - parseInt(amount),
-    //     balance: prevState.balance - parseInt(amount),
-    //   }))
-    // }
+    return incomeAmount
+  }
+
+  getBalance = () => {
+    const {transactionList} = this.state
+    let balanceAmount = 0
+    let incomeAmount = 0
+    let expensesAmount = 0
+
+    transactionList.forEach(eachTransaction => {
+      if (eachTransaction.option === transactionTypeOptions[0].optionId) {
+        incomeAmount += eachTransaction.amount
+      } else {
+        expensesAmount += eachTransaction.amount
+      }
+    })
+
+    balanceAmount = incomeAmount - expensesAmount
+
+    return balanceAmount
   }
 
   render() {
-    const {
-      transactionList,
-      amount,
-      title,
-      income,
-      balance,
-      expenses,
-    } = this.state
+    const {transactionList, amount, option, title} = this.state
+
+    const balance = this.getBalance()
+    const income = this.getIncome()
+    const expenses = this.getExpenses()
 
     return (
       <div className="bg">
@@ -157,6 +200,7 @@ class MoneyManager extends Component {
                 id="type"
                 className="inputs-box"
                 onChange={this.onChangeOption}
+                value={option}
               >
                 {transactionTypeOptions.map(each => (
                   <option key={each.optionId} value={each.optionId}>

@@ -4,17 +4,17 @@ import './index.css'
 
 const TransactionItem = props => {
   const {details, deleteTransaction} = props
-  const {id, title, amount, option} = details
+  const {id, title, amount, displayText} = details
 
   const onClickDeleteBtn = () => {
     deleteTransaction(id)
   }
-  const text = option === 'INCOME' ? 'Income' : 'Expenses'
+  //   const text = option === 'INCOME' ? 'Income' : 'Expenses'
   return (
     <li className="transaction-items-list">
       <p className="">{title}</p>
       <p className="">{amount}</p>
-      <p className="">{text}</p>
+      <p className="">{displayText}</p>
       <button
         className="dlt-btn"
         type="button"
