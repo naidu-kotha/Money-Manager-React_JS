@@ -15,7 +15,7 @@ const TransactionItem = props => {
       <hr className="hr-line" />
       <li className="transaction-items-list">
         <p className="">{title}</p>
-        <p className="">{amount}</p>
+        <p className="">Rs {amount}</p>
         <p className="">{displayText}</p>
         <button
           className="dlt-btn"
