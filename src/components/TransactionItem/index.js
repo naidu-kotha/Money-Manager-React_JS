@@ -16,7 +16,6 @@ const TransactionItem = props => {
         <p className="addedListItem">{title}</p>
         <p className="addedListItem">Rs {amount}</p>
         <p className="addedListItem">{type}</p>
-
         <button
           className="b"
           type="button"

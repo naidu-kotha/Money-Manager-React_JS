@@ -8,7 +8,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 600px;
+  align-items: center;
+  width: 100%;
   border-bottom: 1px solid #cbd5e1;
   border-right: 1px solid #cbd5e1;
   border-left: 1px solid #cbd5e1;
@@ -24,8 +25,7 @@
 .b {
   border-width: 0px;
   background-color: transparent;
-  margin-top: 18px;
-  margin-left: 15px;
+  align-self: center;
 }
 .imgge {
   height: 16px;

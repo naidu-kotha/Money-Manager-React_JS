@@ -181,7 +181,7 @@ class MoneyManager extends Component {
               </div>
             </form>
           </div>
-          <div className="transactionForm">
+          <div className="transaction-list-container">
             <h1 className="history-heading">History</h1>
             <div className="list">
               <ul className="transactions-container">
