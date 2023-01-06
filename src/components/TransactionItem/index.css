@@ -7,14 +7,19 @@
 .liss {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 600px;
+  border-bottom: 1px solid #cbd5e1;
+  border-right: 1px solid #cbd5e1;
+  border-left: 1px solid #cbd5e1;
 }
-.addListItems {
+.addedListItem {
   font-size: 16px;
   align-items: center;
   font-family: 'roboto';
   margin: 10px;
+  padding-left: 20px;
+  padding-right: 30px;
 }
 .b {
   border-width: 0px;
@@ -25,7 +30,4 @@
 .imgge {
   height: 16px;
   width: 16px;
-}
-.hr {
-  width: 90%;
 }

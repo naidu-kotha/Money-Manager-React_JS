@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 // Write your code here
 import './index.css'
 
@@ -14,10 +15,7 @@ const MoneyDetails = props => {
         />
         <div className="mc">
           <p className="moneyDetailsHeadings">Your Balance</p>
-          <p
-            className="moneyDetailsAmounts"
-            //   testid="balanceAmount"
-          >
+          <p className="moneyDetailsAmounts" testid="balanceAmount">
             Rs
             {balance}
           </p>
@@ -31,10 +29,7 @@ const MoneyDetails = props => {
         />
         <div className="mc">
           <p className="moneyDetailsHeadings">Your Income</p>
-          <p
-            className="moneyDetailsAmounts"
-            //   testid="incomeAmount"
-          >
+          <p className="moneyDetailsAmounts" testid="incomeAmount">
             Rs {income}
           </p>
         </div>
@@ -47,10 +42,7 @@ const MoneyDetails = props => {
         />
         <div className="mc">
           <p className="moneyDetailsHeadings">Your Expenses</p>
-          <p
-            className="moneyDetailsAmounts"
-            //   testid="expensesAmount"
-          >
+          <p className="moneyDetailsAmounts" testid="expensesAmount">
             Rs {expenses}
           </p>
         </div>
